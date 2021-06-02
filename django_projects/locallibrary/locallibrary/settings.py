@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Add our new application
-    'catalog.apps.CatalogConfig', #This object was created for us in /catalog/apps.py
+    'catalog', #This object was created for us in /catalog/apps.py
 ]
 
 MIDDLEWARE = [
@@ -107,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'Europe/London'
+TIME_ZONE = 'UTC+7'
 
 USE_I18N = True
 
