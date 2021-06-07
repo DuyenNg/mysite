@@ -1,5 +1,8 @@
+from django.http import request
 from django.shortcuts import render
 from .models import Book, Author, BookInstance, Genre
+from django.views import generic
+from django.shortcuts import get_object_or_404
 
 def index(request):
     num_books = Book.objects.all().count()
@@ -16,3 +19,26 @@ def index(request):
 
     return render(request, 'index.html', context=context)
     
+class BookListView(generic.ListView):
+    model = Book
+    paginate_by = 10
+    
+    def get_context_data(self, **kwargs):
+        context = super(BookListView, self).get_context_data(**kwargs)
+        context['some_data'] = 'This is just some book data'
+        return context
+
+class BookDetailView(generic.DetailView):
+    model = Book      
+
+class AuthorListView(generic.ListView):
+    model = Author
+    paginate_by = 10
+    
+    def get_context_data(self, **kwargs):
+        context = super(AuthorListView, self).get_context_data(**kwargs)
+        context['some_data'] = 'This is just some author data'
+        return context
+
+class AuthorDetailView(generic.DetailView):
+    model = Author    
