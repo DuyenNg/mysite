@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load i18n %}
+  <form method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" data-i18n="[Submit]content.mytranslation">
+  </form>
+{% endblock %}

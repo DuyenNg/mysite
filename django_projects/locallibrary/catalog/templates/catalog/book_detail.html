@@ -2,7 +2,7 @@
 
 {% block content %}
 {% load i18n %}
-  <h1>Title: {{ book.title }}</h1>
+  <h1>{% trans 'Title:' %} {{ book.title }}</h1>
 
   <p><strong>{% trans 'Author:' %}</strong> <a href="">{{ book.author }}</a></p> <!-- author detail link not yet defined -->
   <p><strong>{% trans 'Summary:' %}</strong> {{ book.summary }}</p>

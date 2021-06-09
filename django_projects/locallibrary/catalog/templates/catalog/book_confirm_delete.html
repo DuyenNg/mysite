@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+{% load i18n %}
+<h1>{% trans 'Delete Book' %}</h1>
+
+<p>{% trans 'Are you sure you want to delete the book:' %} {{ book }}?</p>
+
+<form method="POST">
+  {% csrf_token %}
+  <input type="submit" data-i18n="[Yes, delete.]content.mytranslation">
+</form>
+
+{% endblock %}
