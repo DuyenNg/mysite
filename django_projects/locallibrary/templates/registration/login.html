@@ -3,12 +3,12 @@
 {% block content %}
 {% load i18n %}
   {% if form.errors %}
-    <p>{% trans 'Your username and password didn't match. Please try again.' %}</p>
+    <p>{% trans 'Your username and password did not match. Please try again.' %}</p>
   {% endif %}
 
   {% if next %}
     {% if user.is_authenticated %}
-      <p>{% trans 'Your account doesn't have access to this page. To proceed, please login with an account that has access.' %}</p>
+      <p>{% trans 'Your account does not have access to this page. To proceed, please login with an account that has access.' %}</p>
     {% else %}
       <p>{% trans 'Please login to see this page.' %}</p>
     {% endif %}
